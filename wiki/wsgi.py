@@ -10,14 +10,18 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 import os
 import sys
 
-settings_path = '/home/Flinderfox/flinderfox.pythonanywhere.com'
-sys.path.insert(0, settings_path)
+# settings_path = '/home/Flinderfox/flinderfox.pythonanywhere.com'
+# sys.path.insert(0, settings_path)
+if path not in sys.path:
+    sys.path.append(path)
 
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiki.settings')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'wiki.settings'
 
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+# application = get_wsgi_application()
+application = StaticFilesHandler(get_wsgi_application())
 
 """
 # This file contains the WSGI config
