@@ -13,7 +13,8 @@ import sys
 settings_path = '/home/Flinderfox/flinderfox.pythonanywhere.com'
 sys.path.insert(0, settings_path)
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiki.settings')
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiki.settings')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'wiki.settings'
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
