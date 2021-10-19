@@ -10,7 +10,7 @@
     <ul>
         {% for entry in entries %}
             <li>
-                <a href="{{ title.get_absolute_url }}">{{ entry }}</a>
+                <a href="wiki/{{entry|safe}}">{{ entry }}</a>
             </li>
         {% endfor %}
     </ul>
