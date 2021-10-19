@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<h3> Редактор текста: </h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1> {{title}} </h1>
+
+        <textarea name="text"> {{text}}  </textarea>
+
+        <p><input type="submit"></p>
+    </form>
+<p><a href="{% url 'enc:index' %}"> Вернуться на главную страницу </a></p>
+
+{% endblock %}
